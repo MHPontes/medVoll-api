@@ -13,16 +13,19 @@ import java.util.List;
 
 @RestController
 @RequestMapping("medicos")
-public class MedicoController {
+public class MedicoController {             //Controller responsavel por receber e cadastrar um medico vindo do Insomnia
 
     @Autowired
     private MedicoRepository repository;
 
-    @PostMapping
+    @PostMapping                                //Post pois irá receber um metodo Post do Insomnia para cadastror
     @Transactional
     public void cadastrar(@RequestBody @Valid DadosCadastroMedico dados) {
+
         repository.save(new Medico(dados));
     }
+
+    //  recebendo um DTO, representado pelo record DadosCadastroMedico.
 
     @GetMapping
     public List<DadosListagemMedico> listar(){
@@ -31,4 +34,3 @@ public class MedicoController {
 
 }
 
-  //  recebendo um DTO, representado pelo record DadosCadastroMedico.

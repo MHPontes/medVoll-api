@@ -7,7 +7,9 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import med.voll.api.endereco.DadosEndereco;
 
-public record DadosCadastroMedico(
+public record DadosCadastroMedico(                  //Criado classe Record, por ser menos verboso:
+                                                   // Este recurso funciona como se fosse uma classe imutável, para deixarmos o código simples.
+                                                    // Isso para não usarmos uma classe tradicional, pois seria necessário digitarmos os métodos getters e setters, criar construtor, e todas as outras verbosidades do Java.
 
         @NotBlank
         String nome,
