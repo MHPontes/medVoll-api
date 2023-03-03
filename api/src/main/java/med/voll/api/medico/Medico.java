@@ -21,7 +21,6 @@ public class Medico {                                        //Entidade JPA
     private String email;
     private String telefone;
     private String crm;
-
     private Boolean ativo;
 
     @Enumerated
